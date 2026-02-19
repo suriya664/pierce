@@ -28,6 +28,28 @@
 @layer components {
   .btn-primary {
     @apply px-6 py-2 rounded-full bg-purple-600 text-white font-semibold hover:bg-purple-700 transition-all duration-300 shadow-lg hover:shadow-purple-500/50;
+    padding: 0.5rem 1.5rem;
+    border-radius: 9999px;
+    background-color: #7c3aed;
+    color: #ffffff !important;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.28);
+  }
+
+  .btn-primary:hover {
+    background-color: #6d28d9;
+    color: #ffffff !important;
+  }
+
+  /* Home header compact variant */
+  .btn-primary.nav-book-now-compact {
+    padding: 0.45rem 1.1rem;
+    font-size: 0.95rem;
+    line-height: 1;
+    white-space: nowrap;
+    box-shadow: 0 6px 16px rgba(124, 58, 237, 0.24);
   }
 
   .neon-border {
@@ -64,6 +86,634 @@
 [dir="rtl"] .ml-auto {
   margin-right: auto;
   margin-left: 0;
+}
+
+/* Keep shared fixed header readable in light theme */
+body.light-mode header {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  border-bottom-color: rgba(17, 24, 39, 0.12) !important;
+  color: #111827 !important;
+}
+
+body.light-mode header .text-white,
+body.light-mode header a:not(.btn-primary):not(.text-primary):not(.nav-auth-btn),
+body.light-mode header button:not(.btn-primary),
+body.light-mode header #mobile-menu a:not(.btn-primary):not(.text-primary) {
+  color: #111827 !important;
+}
+
+body.light-mode header .border-white\/5,
+body.light-mode header .border-white\/10,
+body.light-mode header .border-white\/20 {
+  border-color: rgba(17, 24, 39, 0.12) !important;
+}
+
+body.light-mode header .hover\:bg-white\/10:hover {
+  background-color: rgba(17, 24, 39, 0.08) !important;
+}
+
+body.light-mode header #mobile-menu {
+  background-color: #ffffff !important;
+  border-bottom-color: rgba(17, 24, 39, 0.12) !important;
+  color: #111827 !important;
+}
+
+/* Header auth buttons (Login / Sign Up) */
+body header .nav-auth-btn {
+  height: 2.25rem;
+  padding: 0 0.95rem;
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  transition: all 0.25s ease;
+}
+
+body header .nav-auth-login {
+  color: #e5e7eb;
+  background-color: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+body header .nav-auth-login:hover {
+  color: #ffffff;
+  background-color: rgba(124, 58, 237, 0.14);
+  border-color: rgba(124, 58, 237, 0.55);
+}
+
+body header .nav-auth-signup {
+  color: #ffffff;
+  background-color: rgba(124, 58, 237, 0.24);
+  border-color: rgba(124, 58, 237, 0.58);
+}
+
+body header .nav-auth-signup:hover {
+  color: #ffffff;
+  background-color: #7c3aed;
+  border-color: #7c3aed;
+}
+
+body.light-mode header .nav-auth-login {
+  color: #111827 !important;
+  background-color: rgba(17, 24, 39, 0.03);
+  border-color: rgba(17, 24, 39, 0.22);
+}
+
+body.light-mode header .nav-auth-login:hover {
+  color: #111827 !important;
+  background-color: rgba(124, 58, 237, 0.12);
+  border-color: rgba(124, 58, 237, 0.5);
+}
+
+body.light-mode header .nav-auth-signup {
+  color: #5b21b6 !important;
+  background-color: rgba(124, 58, 237, 0.12);
+  border-color: rgba(124, 58, 237, 0.4);
+}
+
+body.light-mode header .nav-auth-signup:hover {
+  color: #ffffff !important;
+  background-color: #7c3aed;
+  border-color: #7c3aed;
+}
+
+/* Artists page readability in light theme */
+body.artists-page.light-mode main .text-gray-400 {
+  color: #4b5563 !important;
+}
+
+body.artists-page.light-mode main .text-gray-500 {
+  color: #6b7280 !important;
+}
+
+body.artists-page.light-mode main blockquote.text-white,
+body.artists-page.light-mode main h4.text-white {
+  color: #111827 !important;
+}
+
+body.artists-page.light-mode .guest-program {
+  background-color: #f3f4f6 !important;
+  border-color: rgba(17, 24, 39, 0.12) !important;
+}
+
+body.artists-page.light-mode .guest-program .border-white\/20 {
+  border-color: rgba(17, 24, 39, 0.2) !important;
+}
+
+/* Aftercare CTA readability in light theme */
+body.aftercare-page.light-mode .assessment-cta {
+  background-image: linear-gradient(135deg, #e5e7eb, #ddd6fe) !important;
+  border-color: rgba(17, 24, 39, 0.12) !important;
+}
+
+body.aftercare-page.light-mode .assessment-cta h3 {
+  color: #111827 !important;
+}
+
+body.aftercare-page.light-mode .assessment-cta .text-gray-400 {
+  color: #374151 !important;
+}
+
+body.aftercare-page.light-mode .assessment-cta .border-white\/20 {
+  border-color: rgba(17, 24, 39, 0.2) !important;
+}
+
+body.aftercare-page.light-mode .assessment-cta a:last-child {
+  color: #111827 !important;
+}
+
+body.aftercare-page.light-mode .assessment-cta a:last-child:hover {
+  background-color: rgba(17, 24, 39, 0.08) !important;
+}
+
+/* Gallery page text readability in light theme */
+body.gallery-page.light-mode main .text-gray-400 {
+  color: #374151 !important;
+}
+
+body.gallery-page.light-mode main .text-gray-500 {
+  color: #4b5563 !important;
+}
+
+body.gallery-page.light-mode main .text-white\/50 {
+  color: rgba(17, 24, 39, 0.72) !important;
+}
+
+body.gallery-page.light-mode main .hover\:text-white:hover {
+  color: #111827 !important;
+}
+
+body.gallery-page.light-mode footer {
+  color: #d1d5db !important;
+}
+
+/* Catalog page readability in light theme */
+body.catalog-page.light-mode {
+  background-color: #f9fafb !important;
+}
+
+body.catalog-page.light-mode main h2,
+body.catalog-page.light-mode main h3,
+body.catalog-page.light-mode main h4,
+body.catalog-page.light-mode main .text-white {
+  color: #111827 !important;
+}
+
+body.catalog-page.light-mode main .text-gray-400,
+body.catalog-page.light-mode main .text-gray-500 {
+  color: #4b5563 !important;
+}
+
+body.catalog-page.light-mode .bg-white\/5 {
+  background-color: #ffffff !important;
+  border-color: rgba(17, 24, 39, 0.1) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+}
+
+body.catalog-page.light-mode #jewelry-search {
+  background-color: #f3f4f6 !important;
+  color: #111827 !important;
+  border-color: rgba(17, 24, 39, 0.1) !important;
+}
+
+body.catalog-page.light-mode .filter-checkbox+span {
+  border-color: rgba(17, 24, 39, 0.2) !important;
+}
+
+body.catalog-page.light-mode .filter-checkbox:checked+span {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+
+body.catalog-page.light-mode .bg-gradient-to-br {
+  background-image: linear-gradient(to bottom right, rgba(124, 58, 237, 0.05), rgba(236, 72, 153, 0.05)) !important;
+}
+
+body.catalog-page.light-mode #jewelry-grid .group {
+  background-color: #ffffff !important;
+  border-color: rgba(17, 24, 39, 0.05) !important;
+}
+
+body.catalog-page.light-mode #jewelry-grid .text-white {
+  color: #111827 !important;
+}
+
+body.catalog-page.light-mode #jewelry-grid .bg-black\/50 {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  color: #111827 !important;
+  border-color: rgba(17, 24, 39, 0.1) !important;
+}
+
+body.catalog-page.light-mode footer {
+  background-color: #f3f4f6 !important;
+  border-top-color: rgba(17, 24, 39, 0.1) !important;
+  color: #6b7280 !important;
+}
+
+body.catalog-page.light-mode #mobile-filter-toggle {
+  background-color: #ffffff !important;
+  border-color: rgba(17, 24, 39, 0.1) !important;
+  color: #111827 !important;
+}
+
+/* Booking page readability in light theme */
+body.booking-page.light-mode {
+  background-color: #f9fafb !important;
+}
+
+body.booking-page.light-mode main h1,
+body.booking-page.light-mode main h2,
+body.booking-page.light-mode main h3,
+body.booking-page.light-mode main h4,
+body.booking-page.light-mode main h5,
+body.booking-page.light-mode main .text-white {
+  color: #111827 !important;
+}
+
+body.booking-page.light-mode main .text-gray-400,
+body.booking-page.light-mode main .text-gray-500,
+body.booking-page.light-mode main .text-gray-600 {
+  color: #4b5563 !important;
+}
+
+body.booking-page.light-mode .bg-zinc-900,
+body.booking-page.light-mode .bg-black,
+body.booking-page.light-mode aside .bg-zinc-900,
+body.booking-page.light-mode aside .bg-black {
+  background-color: #ffffff !important;
+  border-color: rgba(17, 24, 39, 0.1) !important;
+}
+
+body.booking-page.light-mode .bg-white\/5 {
+  background-color: rgba(17, 24, 39, 0.05) !important;
+}
+
+body.booking-page.light-mode select,
+body.booking-page.light-mode input {
+  background-color: #ffffff !important;
+  color: #111827 !important;
+  border-color: rgba(17, 24, 39, 0.2) !important;
+}
+
+body.booking-page.light-mode .bg-gradient-to-br {
+  background-image: linear-gradient(to bottom right, rgba(124, 58, 237, 0.05), rgba(236, 72, 153, 0.05)) !important;
+}
+
+body.booking-page.light-mode footer {
+  background-color: #f3f4f6 !important;
+  border-top-color: rgba(17, 24, 39, 0.1) !important;
+  color: #6b7280 !important;
+}
+
+body.booking-page.light-mode .border-white\/5,
+body.booking-page.light-mode .border-white\/10 {
+  border-color: rgba(17, 24, 39, 0.1) !important;
+}
+
+/* Dashboard page readability in light theme */
+body.dashboard-page.light-mode {
+  background-color: #f3f4f6 !important;
+}
+
+body.dashboard-page.light-mode #sidebar {
+  background-color: #ffffff !important;
+  border-right-color: rgba(17, 24, 39, 0.08) !important;
+}
+
+body.dashboard-page.light-mode #sidebar .text-gray-400 {
+  color: #6b7280 !important;
+}
+
+body.dashboard-page.light-mode #sidebar a:hover:not(.bg-primary\/10) {
+  background-color: rgba(17, 24, 39, 0.04) !important;
+}
+
+body.dashboard-page.light-mode main h1,
+body.dashboard-page.light-mode main h2,
+body.dashboard-page.light-mode main h3,
+body.dashboard-page.light-mode main h4,
+body.dashboard-page.light-mode main .text-white {
+  color: #111827 !important;
+}
+
+body.dashboard-page.light-mode main .text-gray-300,
+body.dashboard-page.light-mode main .text-gray-400,
+body.dashboard-page.light-mode main .text-gray-500 {
+  color: #4b5563 !important;
+}
+
+body.dashboard-page.light-mode .bg-zinc-900,
+body.dashboard-page.light-mode .bg-black,
+body.dashboard-page.light-mode .bg-zinc-900\/30,
+body.dashboard-page.light-mode .bg-zinc-900\/50 {
+  background-color: #ffffff !important;
+  border-color: rgba(17, 24, 39, 0.08) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03) !important;
+}
+
+body.dashboard-page.light-mode .bg-white\/2,
+body.dashboard-page.light-mode .bg-white\/5 {
+  background-color: rgba(17, 24, 39, 0.03) !important;
+}
+
+body.dashboard-page.light-mode .border-white\/5,
+body.dashboard-page.light-mode .border-white\/10 {
+  border-color: rgba(17, 24, 39, 0.08) !important;
+}
+
+body.dashboard-page.light-mode .bg-gradient-to-br {
+  background-image: linear-gradient(to bottom right, rgba(124, 58, 237, 0.05), rgba(236, 72, 153, 0.05)) !important;
+}
+
+body.dashboard-page.light-mode footer {
+  background-color: #ffffff !important;
+  border-top-color: rgba(17, 24, 39, 0.08) !important;
+  color: #9ca3af !important;
+}
+
+body.dashboard-page.light-mode #toggle-sidebar-mobile {
+  color: #111827 !important;
+}
+
+/* Home 1 (index.html) Light Mode Visibility & Design Refinements */
+body.light-mode section.bg-dark,
+body.light-mode section.bg-black,
+body.light-mode section.bg-neutral-900\/50 {
+  background-color: #f8fafc !important;
+  color: #111827 !important;
+}
+
+body.light-mode .bg-dark\/50,
+body.light-mode .bg-black\/40,
+body.light-mode .bg-black\/50,
+body.light-mode .bg-neutral-900\/30,
+body.light-mode .bg-neutral-900\/50 {
+  background-color: #ffffff !important;
+  border-color: rgba(17, 24, 39, 0.08) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05) !important;
+}
+
+body.light-mode .text-white,
+body.light-mode h1.text-white,
+body.light-mode h2.text-white,
+body.light-mode h3.text-white,
+body.light-mode h4.text-white,
+body.light-mode h5.text-white {
+  color: #111827 !important;
+}
+
+body.light-mode .text-gray-100,
+body.light-mode .text-gray-200,
+body.light-mode .text-gray-300,
+body.light-mode .text-gray-400 {
+  color: #4b5563 !important;
+}
+
+body.light-mode .border-white\/5,
+body.light-mode .border-white\/10,
+body.light-mode .border-white\/20,
+body.light-mode .border-white\/30 {
+  border-color: rgba(17, 24, 39, 0.1) !important;
+}
+
+body.light-mode .bg-white\/10 {
+  background-color: rgba(17, 24, 39, 0.05) !important;
+}
+
+body.light-mode .bg-primary\/10 {
+  background-color: rgba(124, 58, 237, 0.08) !important;
+}
+
+body.light-mode .bg-secondary\/10 {
+  background-color: rgba(236, 72, 153, 0.08) !important;
+}
+
+body.light-mode .bg-accent\/10 {
+  background-color: rgba(6, 182, 212, 0.08) !important;
+}
+
+body.light-mode .bg-yellow-500\/10 {
+  background-color: rgba(234, 179, 8, 0.08) !important;
+}
+
+/* Fix Icon Visibility in Standard & Service Cards (Light Mode) */
+body.light-mode .bg-primary\/10 i {
+  color: var(--primary) !important;
+}
+
+body.light-mode .bg-secondary\/10 i {
+  color: var(--secondary) !important;
+}
+
+body.light-mode .bg-accent\/10 i {
+  color: var(--accent) !important;
+}
+
+body.light-mode .bg-yellow-500\/10 i {
+  color: #a16207 !important;
+}
+
+/* In Core Services section (absolute icons) */
+body.light-mode section .opacity-10 i {
+  color: #111827 !important;
+  opacity: 0.2;
+}
+
+/* Ensure icons turn white on hover when the background becomes solid */
+body.light-mode .group:hover i {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+/* Specific section refinements for Home 1 */
+body.light-mode section.py-12.bg-black {
+  background-color: #f1f5f9 !important;
+}
+
+body.light-mode section.py-12.bg-black .text-gray-200 {
+  color: #334155 !important;
+}
+
+body.light-mode section.py-32.relative.overflow-hidden {
+  background-color: #ffffff !important;
+}
+
+body.light-mode .bg-dark\/50.group:hover,
+body.light-mode .bg-black\/40.group:hover {
+  border-color: var(--primary) !important;
+}
+
+body.light-mode footer.bg-black {
+  background-color: #f8fafc !important;
+  border-top-color: rgba(17, 24, 39, 0.1) !important;
+}
+
+body.light-mode footer .text-gray-300 {
+  color: #64748b !important;
+}
+
+body.light-mode footer a:hover {
+  color: #111827 !important;
+}
+
+/* Home 2: Jewelry Cards Text Visibility in Light Mode */
+body.light-mode .from-black\/80 h4,
+body.light-mode .from-black\/80 span:not(.text-primary):not(.text-secondary):not(.text-accent),
+body.light-mode .from-black\/80 i:not(.text-primary) {
+  color: #ffffff !important;
+}
+
+body.light-mode .from-black\/80 span.text-primary,
+body.light-mode .from-black\/80 .text-primary {
+  color: var(--primary) !important;
+}
+
+/* Home v1 Hero Light Mode Refinement */
+body.light-mode section.min-h-screen.flex.items-center h1.text-white,
+body.light-mode section.min-h-screen.flex.items-center .text-gray-100,
+body.light-mode section.min-h-screen.flex.items-center .text-gray-300,
+body.light-mode section.min-h-screen.flex.items-center a.text-white,
+body.light-mode section.min-h-screen.flex.items-center i {
+  color: #ffffff !important;
+}
+
+body.light-mode section.min-h-screen.flex.items-center .border-white\/30 {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+body.light-mode section.min-h-screen.flex.items-center a.px-10:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Exact 1024px layout stabilization */
+@media (width: 1024px) {
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body.menu-open {
+    overflow: hidden;
+    touch-action: none;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 100% !important;
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  /* Navigation: force tablet to use mobile drawer pattern */
+  header .hidden.lg\:flex {
+    display: none !important;
+  }
+
+  header button.lg\:hidden {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  header #mobile-menu {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: auto !important;
+    width: min(84vw, 360px) !important;
+    height: 100vh !important;
+    padding: 5.5rem 1.25rem 1.5rem !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-bottom: none !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 90 !important;
+    display: flex !important;
+    pointer-events: none;
+    transform: translateX(100%);
+    transition: transform 0.28s ease;
+  }
+
+  body.light-mode header #mobile-menu {
+    border-left-color: rgba(17, 24, 39, 0.12) !important;
+  }
+
+  header .nav-auth-btn,
+  header .nav-book-now-compact {
+    display: none !important;
+  }
+
+  header #mobile-menu.flex {
+    pointer-events: auto;
+    transform: translateX(0);
+  }
+
+  header #mobile-menu.hidden {
+    display: flex !important;
+    pointer-events: none;
+    transform: translateX(100%);
+  }
+
+  /* Hero/layout behavior at exact 1024px */
+  main {
+    overflow-x: hidden;
+  }
+
+  section[class*="lg:flex-row"],
+  section[class*="lg:flex-row-reverse"],
+  div[class*="lg:flex-row"],
+  div[class*="lg:flex-row-reverse"] {
+    flex-direction: column !important;
+  }
+
+  section[class*="lg:flex-row"]>div,
+  section[class*="lg:flex-row-reverse"]>div,
+  div[class*="lg:flex-row"]>div,
+  div[class*="lg:flex-row-reverse"]>div {
+    width: 100% !important;
+  }
+
+  section[class*="min-h-screen"] {
+    min-height: auto !important;
+  }
+
+  main[class*="lg:pt-0"] {
+    padding-top: 6rem !important;
+  }
+
+  section[class*="min-h-screen"] [class*="lg:w-1/2"] {
+    width: 100% !important;
+  }
+
+  section[class*="min-h-screen"] [class*="lg:p-24"] {
+    padding: 2.5rem 1.5rem !important;
+  }
+
+  section[class*="min-h-screen"]>div:last-child {
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  section[class*="min-h-screen"] img,
+  section[class*="lg:flex-row"] img,
+  section[class*="lg:flex-row-reverse"] img,
+  div[class*="lg:flex-row"] img,
+  div[class*="lg:flex-row-reverse"] img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Grid consistency */
+  [class*="md:grid-cols-"],
+  [class*="lg:grid-cols-"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
 }
 
 /* Animations */

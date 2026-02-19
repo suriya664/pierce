@@ -17,27 +17,36 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body class="dark-mode">
+<body class="catalog-page dark-mode">
 
-    <header class="fixed w-full z-50 bg-dark/80 backdrop-blur-md border-b border-white/10">
+    <header class="fixed w-full z-50 bg-dark/80 backdrop-blur-md border-b border-white/10 text-white">
         <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="index.html" class="flex items-center space-x-2">
+            <a href="index.html" class="flex items-center space-x-2 shrink-0">
                 <i class="fas fa-needle text-primary text-2xl rotate-45"></i>
                 <span class="text-2xl font-display font-extrabold tracking-tighter text-white">ETHEREAL<span
                         class="text-primary">INK</span></span>
             </a>
+
             <div class="hidden lg:flex items-center space-x-8">
-                <a href="index.html" class="text-sm font-semibold hover:text-primary transition-colors">Home</a>
-                <a href="index-v2.html" class="text-sm font-semibold hover:text-primary transition-colors">Home 2</a>
-                <a href="services.html" class="text-sm font-semibold hover:text-primary transition-colors">Services</a>
-                <a href="jewelry-catalog.html" class="text-sm font-semibold text-primary">Jewelry</a>
-                <a href="artists.html" class="text-sm font-semibold hover:text-primary transition-colors">Artists</a>
+                <a href="index.html"
+                    class="text-sm font-semibold hover:text-primary transition-colors whitespace-nowrap">Home</a>
+                <a href="index-v2.html"
+                    class="text-sm font-semibold hover:text-primary transition-colors whitespace-nowrap">Home 2</a>
+                <a href="services.html"
+                    class="text-sm font-semibold hover:text-primary transition-colors whitespace-nowrap">Services</a>
+                <a href="jewelry-catalog.html"
+                    class="text-sm font-semibold text-primary border-b-2 border-primary pb-1 transition-colors whitespace-nowrap"
+                    aria-current="page">Jewelry</a>
+                <a href="artists.html"
+                    class="text-sm font-semibold hover:text-primary transition-colors whitespace-nowrap">Artists</a>
                 <a href="aftercare-guide.html"
-                    class="text-sm font-semibold hover:text-primary transition-colors">Aftercare</a>
-                <a href="gallery.html" class="text-sm font-semibold hover:text-primary transition-colors">Gallery</a>
+                    class="text-sm font-semibold hover:text-primary transition-colors whitespace-nowrap">Aftercare</a>
+                <a href="gallery.html"
+                    class="text-sm font-semibold hover:text-primary transition-colors whitespace-nowrap">Gallery</a>
                 <a href="dashboard.html"
-                    class="text-sm font-semibold hover:text-primary transition-colors">Dashboard</a>
+                    class="text-sm font-semibold hover:text-primary transition-colors whitespace-nowrap">Dashboard</a>
             </div>
+
             <div class="flex items-center space-x-4">
                 <button id="rtl-toggle" class="p-2 rounded-full hover:bg-white/10 transition-colors"
                     title="Toggle RTL/LTR">
@@ -48,7 +57,18 @@
                     <i id="theme-icon-dark" class="fas fa-moon hidden"></i>
                     <i id="theme-icon-light" class="fas fa-sun"></i>
                 </button>
-                <a href="booking.html" class="btn-primary">Book Now</a>
+                <a href="login.html"
+                    class="nav-auth-btn nav-auth-login hidden lg:inline-flex items-center justify-center whitespace-nowrap">Login</a>
+                <a href="register.html"
+                    class="nav-auth-btn nav-auth-signup hidden lg:inline-flex items-center justify-center whitespace-nowrap">Sign
+                    Up</a>
+                <a href="booking.html"
+                    class="btn-primary nav-book-now-compact hidden md:inline-flex items-center justify-center whitespace-nowrap shrink-0">Book
+                    Now</a>
+
+                <button id="mobile-menu-btn" class="lg:hidden p-2 text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </nav>
 
@@ -58,13 +78,16 @@
             <a href="index.html" class="text-lg font-semibold">Home</a>
             <a href="index-v2.html" class="text-lg font-semibold">Home 2</a>
             <a href="services.html" class="text-lg font-semibold">Services</a>
-            <a href="jewelry-catalog.html" class="text-lg font-semibold">Jewelry</a>
+            <a href="jewelry-catalog.html" class="text-lg font-semibold text-primary" aria-current="page">Jewelry</a>
             <a href="artists.html" class="text-lg font-semibold">Artists</a>
             <a href="aftercare-guide.html" class="text-lg font-semibold">Aftercare</a>
             <a href="gallery.html" class="text-lg font-semibold">Gallery</a>
             <a href="dashboard.html" class="text-lg font-semibold">Dashboard</a>
+            <a href="login.html" class="text-lg font-semibold">Login</a>
+            <a href="register.html" class="text-lg font-semibold">Sign Up</a>
             <a href="booking.html" class="btn-primary inline-block text-center">Book Appointment</a>
         </div>
+    </header>
     </header>
 
     <main class="pt-32 pb-24">
@@ -73,7 +96,18 @@
             <div class="flex flex-col lg:flex-row gap-12 mb-24">
                 <!-- Filters Sidebar -->
                 <aside class="lg:w-1/4">
-                    <div class="sticky top-40 space-y-8">
+                    <!-- Mobile Filter Toggle -->
+                    <button id="mobile-filter-toggle"
+                        class="lg:hidden w-full flex items-center justify-between bg-white/5 border border-white/10 p-6 rounded-3xl mb-8 group hover:border-primary transition-all">
+                        <span class="font-display font-black uppercase tracking-tighter">Filter Collection</span>
+                        <div
+                            class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                            <i class="fas fa-sliders-h"></i>
+                        </div>
+                    </button>
+
+                    <div id="filter-container"
+                        class="hidden lg:block space-y-8 lg:sticky lg:top-40 transition-all duration-300">
                         <div class="bg-white/5 rounded-3xl p-8 border border-white/10">
                             <div class="flex items-center justify-between mb-8">
                                 <h3 class="text-xl font-bold uppercase tracking-tight">Refine</h3>
@@ -157,7 +191,9 @@
                                 Not sure which gauge or length you need? Anatomy varies significantly—we recommend a
                                 professional sizing session before purchasing.
                             </p>
-                            <a href="booking.html" class="text-xs font-bold text-white uppercase underline">Book Sizing
+                            <a href="booking.html"
+                                class="text-xs font-bold text-primary uppercase underline decoration-primary decoration-2 underline-offset-2 hover:text-white transition-colors">Book
+                                Sizing
                                 Session</a>
                         </div>
                     </div>
@@ -165,10 +201,11 @@
 
                 <!-- Grid -->
                 <div class="lg:w-3/4">
-                    <div class="flex items-center justify-between mb-12">
+                    <div class="relative flex items-center justify-center mb-12">
                         <h2 class="text-4xl font-display font-black uppercase tracking-tighter">THE <span
                                 class="text-primary">COLLECTION</span></h2>
-                        <span id="results-count" class="text-xs uppercase font-black text-gray-500">24 Items
+                        <span id="results-count"
+                            class="hidden md:block absolute right-0 text-xs uppercase font-black text-gray-500">24 Items
                             Found</span>
                     </div>
 
@@ -272,7 +309,7 @@
                 </section>
 
                 <!-- Care & Buying Guide -->
-                <section class="p-12 border border-white/5 rounded-[40px] bg-dark">
+                <section class="p-12 border border-white/5 rounded-[40px] bg-dark text-white">
                     <div class="text-center mb-16">
                         <h2 class="text-3xl font-display font-black uppercase">INVESTMENT PROTECTION GUIDE</h2>
                     </div>
@@ -317,7 +354,7 @@
     <div id="quick-view" class="fixed inset-0 z-[60] hidden flex items-center justify-center p-6 md:p-12">
         <div class="absolute inset-0 bg-black/90 backdrop-blur-md" id="modal-overlay"></div>
         <div
-            class="relative bg-dark border border-white/10 rounded-3xl w-full max-w-5xl max-h-[90vh] overflow-y-auto flex flex-col md:flex-row">
+            class="relative bg-dark border border-white/10 rounded-3xl w-full max-w-5xl max-h-[90vh] overflow-y-auto flex flex-col md:flex-row text-white">
             <button id="close-modal" class="absolute top-6 right-6 text-2xl z-20"><i class="fas fa-times"></i></button>
             <div class="md:w-1/2 h-96 md:h-auto bg-neutral-900">
                 <img id="modal-img" src="" class="w-full h-full object-cover">
@@ -352,6 +389,75 @@
 
     <script src="js/main.js"></script>
     <script src="js/filter.js"></script>
+
+        <footer class="bg-black border-t border-white/10 pt-20 pb-10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div>
+                    <a href="index.html" class="flex items-center space-x-2 mb-6">
+                        <i class="fas fa-needle text-primary text-2xl rotate-45"></i>
+                        <span class="text-2xl font-display font-extrabold tracking-tighter text-white">ETHEREAL<span class="text-primary">INK</span></span>
+                    </a>
+                    <p class="text-gray-400 text-sm mb-8">
+                        Trusted piercing and jewelry studio focused on precision, hygiene, and client care.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 text-gray-200 flex items-center justify-center hover:bg-primary hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 text-gray-200 flex items-center justify-center hover:bg-primary hover:text-white transition-colors"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 text-gray-200 flex items-center justify-center hover:bg-primary hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white">Explore</h4>
+                    <ul class="space-y-3 text-gray-300 text-sm">
+                        <li><a href="services.html" class="hover:text-white transition-colors">Services</a></li>
+                        <li><a href="artists.html" class="hover:text-white transition-colors">Artists</a></li>
+                        <li><a href="jewelry-catalog.html" class="hover:text-white transition-colors">Jewelry Catalog</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white">Studio</h4>
+                    <ul class="space-y-4 text-gray-300 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-primary mt-1 mr-3"></i>
+                            <span>123 Neon Boulevard,<br>Vibrant City, VC 54321</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone text-accent mr-3"></i>
+                            <span>(555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-clock text-secondary mr-3"></i>
+                            <span>Tue - Sun: 12pm - 8pm</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white">Updates</h4>
+                    <p class="text-gray-300 text-sm mb-4">Get release alerts, artist schedules, and studio news.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Email Address" class="bg-white/10 border border-white/20 rounded-l-lg px-4 py-3 text-sm text-white placeholder:text-gray-400 focus:outline-none focus:border-primary w-full">
+                        <button class="bg-primary px-4 py-3 rounded-r-lg hover:bg-purple-700 transition-colors" aria-label="Submit newsletter email">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
+                <p>&copy; 2026 Ethereal Ink Piercing Studio. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms</a>
+                    <a href="#" class="hover:text-white transition-colors">Safety</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

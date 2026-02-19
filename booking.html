@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 
-<body class="dark-mode bg-dark text-white font-[Inter]">
+<body class="booking-page dark-mode font-[Inter] overflow-x-hidden">
 
     <header class="fixed w-full z-50 bg-dark/80 backdrop-blur-md border-b border-white/10">
         <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
@@ -44,17 +44,51 @@
                     class="text-sm font-semibold hover:text-primary transition-colors hover:scale-105 transition-transform">Dashboard</a>
             </div>
             <div class="flex items-center space-x-4">
-                <a href="booking.html" class="btn-primary">Book Now</a>
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-white/10 transition-colors"
+                    title="Toggle Theme">
+                    <i id="theme-icon-dark" class="fas fa-moon hidden"></i>
+                    <i id="theme-icon-light" class="fas fa-sun"></i>
+                </button>
+                <a href="login.html"
+                    class="nav-auth-btn nav-auth-login hidden lg:inline-flex items-center justify-center whitespace-nowrap">Login</a>
+                <a href="register.html"
+                    class="nav-auth-btn nav-auth-signup hidden lg:inline-flex items-center justify-center whitespace-nowrap">Sign
+                    Up</a>
+                <a href="booking.html"
+                    class="btn-primary nav-book-now-compact hidden md:inline-flex items-center justify-center whitespace-nowrap shrink-0">Book
+                    Now</a>
+                <button id="mobile-menu-btn" class="lg:hidden p-2 text-2xl" aria-label="Open menu">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden absolute top-full left-0 w-full bg-dark border-b border-white/10 flex-col p-6 space-y-4 animate-fadeIn">
+            <a href="index.html" class="text-lg font-semibold">Home</a>
+            <a href="index-v2.html" class="text-lg font-semibold">Home 2</a>
+            <a href="services.html" class="text-lg font-semibold">Services</a>
+            <a href="jewelry-catalog.html" class="text-lg font-semibold">Jewelry</a>
+            <a href="artists.html" class="text-lg font-semibold">Artists</a>
+            <a href="aftercare-guide.html" class="text-lg font-semibold">Aftercare</a>
+            <a href="gallery.html" class="text-lg font-semibold">Gallery</a>
+            <a href="dashboard.html" class="text-lg font-semibold">Dashboard</a>
+            <a href="login.html" class="text-lg font-semibold">Login</a>
+            <a href="register.html" class="text-lg font-semibold">Sign Up</a>
+            <a href="booking.html" class="btn-primary inline-block text-center" aria-current="page">Book Appointment</a>
+        </div>
     </header>
 
     <main class="pt-32 pb-24">
         <div class="container mx-auto px-6">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-24">
-                    <h1 class="text-6xl md:text-8xl font-display font-black mb-8 uppercase tracking-tighter">SECURE THE
-                        <br><span class="text-primary italic">EXPERIENCE</span></h1>
+                    <h1
+                        class="text-4xl sm:text-5xl md:text-8xl font-display font-black mb-8 uppercase tracking-tighter break-words leading-tight">
+                        SECURE THE
+                        <br><span class="text-primary italic">EXPERIENCE</span>
+                    </h1>
                     <p class="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
                         Precision starts here. Select your procedure and partner with an artist who shares your
                         aesthetic vision. All appointments require a non-refundable session fee to guarantee clinical
@@ -296,11 +330,76 @@
         </div>
     </main>
 
-    <footer
-        class="bg-black border-t border-white/5 py-12 text-center text-gray-700 text-[10px] font-black uppercase tracking-[0.4em]">
-        <p>&copy; 2026 Ethereal Ink Collective</p>
+        <footer class="bg-black border-t border-white/10 pt-20 pb-10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div>
+                    <a href="index.html" class="flex items-center space-x-2 mb-6">
+                        <i class="fas fa-needle text-primary text-2xl rotate-45"></i>
+                        <span class="text-2xl font-display font-extrabold tracking-tighter text-white">ETHEREAL<span class="text-primary">INK</span></span>
+                    </a>
+                    <p class="text-gray-400 text-sm mb-8">
+                        Trusted piercing and jewelry studio focused on precision, hygiene, and client care.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 text-gray-200 flex items-center justify-center hover:bg-primary hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 text-gray-200 flex items-center justify-center hover:bg-primary hover:text-white transition-colors"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 text-gray-200 flex items-center justify-center hover:bg-primary hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white">Explore</h4>
+                    <ul class="space-y-3 text-gray-300 text-sm">
+                        <li><a href="services.html" class="hover:text-white transition-colors">Services</a></li>
+                        <li><a href="artists.html" class="hover:text-white transition-colors">Artists</a></li>
+                        <li><a href="jewelry-catalog.html" class="hover:text-white transition-colors">Jewelry Catalog</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white">Studio</h4>
+                    <ul class="space-y-4 text-gray-300 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-primary mt-1 mr-3"></i>
+                            <span>123 Neon Boulevard,<br>Vibrant City, VC 54321</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone text-accent mr-3"></i>
+                            <span>(555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-clock text-secondary mr-3"></i>
+                            <span>Tue - Sun: 12pm - 8pm</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white">Updates</h4>
+                    <p class="text-gray-300 text-sm mb-4">Get release alerts, artist schedules, and studio news.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Email Address" class="bg-white/10 border border-white/20 rounded-l-lg px-4 py-3 text-sm text-white placeholder:text-gray-400 focus:outline-none focus:border-primary w-full">
+                        <button class="bg-primary px-4 py-3 rounded-r-lg hover:bg-purple-700 transition-colors" aria-label="Submit newsletter email">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
+                <p>&copy; 2026 Ethereal Ink Piercing Studio. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms</a>
+                    <a href="#" class="hover:text-white transition-colors">Safety</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
+    <script src="js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script>
         flatpickr("#datepicker", {

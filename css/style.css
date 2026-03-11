@@ -400,7 +400,8 @@ body.dashboard-page.light-mode main .text-white {
 
 body.dashboard-page.light-mode main .text-gray-300,
 body.dashboard-page.light-mode main .text-gray-400,
-body.dashboard-page.light-mode main .text-gray-500 {
+body.dashboard-page.light-mode main .text-gray-500,
+body.dashboard-page.light-mode main .text-white\/70 {
   color: #4b5563 !important;
 }
 
@@ -425,6 +426,15 @@ body.dashboard-page.light-mode .border-white\/10 {
 
 body.dashboard-page.light-mode .bg-gradient-to-br {
   background-image: linear-gradient(to bottom right, rgba(124, 58, 237, 0.05), rgba(236, 72, 153, 0.05)) !important;
+}
+
+body.dashboard-page.light-mode .bg-gradient-to-br .bg-white {
+  background-color: #111827 !important;
+  color: #ffffff !important;
+}
+
+body.dashboard-page.light-mode .bg-gradient-to-br .bg-white\/20 {
+  background-color: rgba(17, 24, 39, 0.1) !important;
 }
 
 body.dashboard-page.light-mode footer {
